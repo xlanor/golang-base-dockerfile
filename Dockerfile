@@ -11,4 +11,4 @@ RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh 
 
 RUN wget https://github.com/gobuffalo/pop/releases/download/v5.3.3/pop_5.3.3_linux_amd64.tar.gz \
   && tar xvzf pop_5.3.3_linux_amd64.tar.gz \
-  && mv pop_5.3.3_linux_amd64/soda /usr/local/bin
+  && mv /tmp/pop_5.3.3_linux_amd64/soda /usr/local/bin
