@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["1.15-alpine3.12",  "1.14.15-alpine3.12",  "1.16rc1-alpine3.12"  ]
+        tags: ["1.15-alpine3.12",  "1.14.15-alpine3.12",  "1.16rc1-alpine3.12"  ]
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
@@ -26,9 +26,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          version: ${{ matrix.version }}
+          version: ${{ matrix.tags }}
           file: Dockerfile
           push: true
-          tags:  ghcr.io/${{ github.repository }}:${{ matrix.version }}
+          tags:  ghcr.io/${{ github.repository }}:${{ matrix.tags }}
+          env:
           build-args: |
-            DEFAULT_BASE=golang:${{ matrix.version }}
+            DEFAULT_BASE=golang:${{ matrix.tags }}
