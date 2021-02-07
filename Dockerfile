@@ -6,6 +6,3 @@ RUN apk update \
   &&   update-ca-certificates
 
 RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s
-
-RUN GO111MODULE=on go get github.com/gobuffalo/pop/...
-RUN GO111MODULE=on go install github.com/gobuffalo/pop/soda@latest
