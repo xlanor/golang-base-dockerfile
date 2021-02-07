@@ -8,5 +8,4 @@ RUN apk update \
 RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s
 
 RUN go get github.com/gobuffalo/pop/...
-
-RUN go install github.com/gobuffalo/pop/soda@latest
+RUN go install github.com/gobuffalo/pop/soda
