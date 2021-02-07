@@ -13,6 +13,6 @@ RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/i
     && cp ./bin/air /bin/air
 
 RUN go get -u -v -tags sqlite github.com/gobuffalo/pop/... \
-  && go install -tags sqlite github.com/gobuffalo/pop/soda
+  && go install -tags sqlite github.com/gobuffalo/pop/soda@latest
 
 RUN rm -rf /build
