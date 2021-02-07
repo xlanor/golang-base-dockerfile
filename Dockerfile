@@ -4,7 +4,7 @@ FROM $DEFAULT_BASE
 WORKDIR /build
 
 RUN apk update \                                                                                                                                                                                                                        
-  &&   apk add --no-cache ca-certificates wget vim curl git postgresql-client make \                                                                                                                                                                                                      
+  &&   apk add --no-cache ca-certificates wget vim curl git postgresql-client make gcc libtool musl-dev \                                                                                                                                                                                                      
   &&   update-ca-certificates
 
 RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/install.sh \
