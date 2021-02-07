@@ -14,6 +14,6 @@ RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/i
 
 RUN go mod init build-repo \
   && go get -u -v -tags sqlite github.com/gobuffalo/pop/... \
-  && go install -tags sqlite github.com/gobuffalo/pop/soda@latest
+  && go install -tags sqlite github.com/gobuffalo/pop/soda
 
 RUN rm -rf /build
