@@ -26,10 +26,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          version: ${{ matrix.tags }}
           file: Dockerfile
           push: true
           tags:  ghcr.io/${{ github.repository }}:${{ matrix.tags }}
-          env:
           build-args: |
             DEFAULT_BASE=golang:${{ matrix.tags }}
