@@ -12,8 +12,7 @@ RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/i
     && sh install.sh \
     && cp ./bin/air /bin/air
 
-RUN wget https://github.com/gobuffalo/pop/releases/download/v5.3.3/pop_5.3.3_linux_amd64.tar.gz \
-  && tar xvzf pop_5.3.3_linux_amd64.tar.gz \
-  && cp ./soda /bin/soda
+RUN go get -u -v -tags sqlite github.com/gobuffalo/pop/... && \
+  && go install -tags sqlite github.com/gobuffalo/pop/soda
 
 RUN rm -rf /build
