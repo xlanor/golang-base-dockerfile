@@ -15,4 +15,6 @@ ghcr.io/xlanor/golang-base-dockerfile:1.15-alpine3.12
 ghcr.io/xlanor/golang-base-dockerfile:1.14.15-alpine3.12
 ```
 
+This is automatically deployed to [ghcr](https://github.com/users/xlanor/packages/container/package/golang-base-dockerfile) on every commit to the master branch via gh actions
+
 Please dont use this in production.
