@@ -1,4 +1,4 @@
-ARG DEFAULT_BASE=golang:1.16-rc-alpine3.13
+ARG DEFAULT_BASE=golang:1.16.3-alpine3.13
 FROM $DEFAULT_BASE
 
 WORKDIR /build
