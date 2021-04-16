@@ -5,7 +5,8 @@ WORKDIR /build
 
 RUN apk update \                                                                                                                                                                                                                        
   &&   apk add --no-cache ca-certificates wget vim curl git postgresql-client make gcc libtool musl-dev \                                                                                                                                                                                                      
-  &&   update-ca-certificates
+  &&   update-ca-certificates python3 py3-pip
+
 
 RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/install.sh \
     && chmod +x install.sh \
@@ -16,8 +17,8 @@ RUN go mod init build-repo \
   && go get -u -v -tags sqlite github.com/gobuffalo/pop/... \
   && go install -tags sqlite github.com/gobuffalo/pop/soda
   
-RUN apk add --no-cache python3 py3-pip
-
 RUN pip3 install toml-cli
+
+ENV PATH="/usr/lib/python3.8/site-packages:${PATH}"
 
 RUN rm -rf /build
