@@ -15,5 +15,9 @@ RUN curl -fLo install.sh https://raw.githubusercontent.com/cosmtrek/air/master/i
 RUN go mod init build-repo \
   && go get -u -v -tags sqlite github.com/gobuffalo/pop/... \
   && go install -tags sqlite github.com/gobuffalo/pop/soda
+  
+RUN apk add --no-cache python3 py3-pip
+
+RUN pip3 install toml-cli
 
 RUN rm -rf /build
