@@ -19,6 +19,6 @@ RUN go mod init build-repo \
   
 RUN pip3 install toml-cli
 
-ENV PATH="/usr/lib/python3.8/site-packages:${PATH}"
+ENV PATH="/usr/lib/python3.8/site-packages:$PATH"
 
 RUN rm -rf /build
